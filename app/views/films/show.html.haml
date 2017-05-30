@@ -4,6 +4,7 @@
     %h1.title= @film.title
 
   .film-details
+    %label Rating:
     .average-rating= @film.rating_avg
     -if !@film.raters.include?(current_user)
       =render partial: 'ratings/new_film_rating'
