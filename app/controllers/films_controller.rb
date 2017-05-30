@@ -8,7 +8,7 @@ class FilmsController < ApplicationController
       @films = Film.search(params[:search]).order("title ASC").page
       @allfilms = nil
     else
-    	@films = Film.search(params[:search]).order("title ASC").page
+      @films = Film.order(:title).page params[:page]
     end
   end
 

@@ -1,27 +1,43 @@
-# README
+# Project Rated
+Project Rated is an online database of information related to movies, including actors, reviews, ratings, comments, and trailers.
 
-Movie Review Website
-see heroku link: dbc-client-rated.herokuapp.com
+Live database at: [Heroku](dbc-client-rated.herokuapp.com)
 
-Features missing in MVP:
 
-Potential Improvements:
-- you cannot rate your own content? (currently can)
+### Supported Versions
 
-Stretch feature:
-- Trusted reviewer can delete other users' comments and ratings
+* Ruby 2.0.0, 2.1.x, 2.2.x, 2.3.x, 2.4.x, 2.5
 
-Fixed Issues:
-- reviews show could link to itself with either "view full review" if on the film or actor page, but to the title of the reviewable otherwise (can do this with passing @review_object = true where you just want the "view full review" link)
-- validations for comments so people can't create an empty comment
-- link to reviewed object in review
-- No actor show page
-- User can't delete own film comments
-- Rating needs to be rounded down
-- Rating needs to be validated to be an integer
-- No validations to prevent user from making a rating over 5
-- When unregistered users visit unauthorized pages server will give errors
+* Rails 4.1, 4.2, 5.0, 5.1, 5.2
 
+* Haml 3+
+
+### Installing
+
+Go to project directory and bundle to use the gems in the project
+
+```
+bundle
+```
+
+After installation, run the rails server by typing
+
+```
+bin/rails server
+```
+
+Go to localhost:3000 on your browser to access the web application.
+
+## Built With
+
+* [Rails](http://guides.rubyonrails.org/) - The web framework used
+
+## Authors
+
+* **Dillon Arevalo**
+* **Joseph Huang**
+* **Namuun Bayaraa**
+* **Govind Rai**
 
 
 Example account for anyone wanting to try the thing out:
