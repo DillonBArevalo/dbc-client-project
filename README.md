@@ -1,5 +1,5 @@
 # Project Rated
-Project Rated is an online database of information related to movies, inclluding actors, reviews, ratings, comments, and trailers.
+Project Rated is an online database of information related to movies, including actors, reviews, ratings, comments, and trailers.
 
 Live database at: [Heroku](dbc-client-rated.herokuapp.com)
 
@@ -36,3 +36,5 @@ Go to localhost:3000 on your browser to access the web application.
 
 * **Dillon Arevalo**
 * **Joseph Huang**
+* **Namuun Bayaraa**
+* **Govind Rai**
