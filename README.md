@@ -21,3 +21,13 @@ Fixed Issues:
 - Rating needs to be validated to be an integer
 - No validations to prevent user from making a rating over 5
 - When unregistered users visit unauthorized pages server will give errors
+
+
+
+Example account for anyone wanting to try the thing out:
+ first name: example
+ last name: account
+ email: example@account.com
+ password: password
+
+ Trusted Rater: true
