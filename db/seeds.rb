@@ -63,13 +63,20 @@ Film.find_by({title: "Old Boy"}).categories = [Category.find_by({title: "Action"
 Film.find_by({title: "Old Boy"}).actors = [Actor.find_by({first_name: "Jie-tae", last_name: "Yu"})]
 
 all_films = Film.all
-
 all_users = User.all
+all_actors = Actor.all
+
+actor_review_bodies = ["I know them!", "Favorite actor of all time. Seriously.", "Such a one note actor; I can't stand them!", "I've literally never seen a performance from them that I've liked.", "I watch movies just because his actor is in them. Can't recommend them more!"]
+
+all_actors.each do |actor|
+  2.times do
+    actor.reviews.create(text: actor_review_bodies.sample, user_id: all_users.sample.id)
+  end
+end
 
 all_reviews = Review.all
 
-review_comment_bodies = ["I totally agree!", "No! You're wrong!", "I'm not sure if I agree or not...", "Valid point!", "Dude, did you even watch the movie?", "This review seems like it was picked off an array and isn't specific to this movie!"]
-
+review_comment_bodies = ["I totally agree!", "No! You're wrong!", "I'm not sure if I agree or not...", "Valid point!", "Dude, did you even watch the movie?", "This review seems like it was picked off an array and isn't specific to this movie/actor!"]
 film_comment_bodies = ["My brother worked on this movie!", "This movie changed my life!", "I've never seen this one, is it good?", "Are you kidding me? Why is this movie on the website? I thought it was carefully curated!"]
 
 all_films.each do |film|
