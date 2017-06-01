@@ -15,9 +15,12 @@
       .new-review-link= link_to "Add review", film_reviews_new_path(@film), remote: true
 
     %h3 Actors
-    %ul
-      - @film.actors.each do |actor|
-        %li= link_to(actor.full_name, actor_path(actor))
+    -if @film.actors.length > 0
+      %ul
+        - @film.actors.each do |actor|
+          %li= link_to(actor.full_name, actor_path(actor))
+    -else
+      %p We do not have any actors listed for this film
 
 -if @film.video_url
   %h3 Trailer for your viewing pleasure
@@ -26,12 +29,18 @@
 .film-review-comment
   .film-review
     %h3 Reviews
-    - @film.reviews.each do |review|
-      =render partial: 'reviews/show', locals: {review: review}
+    -if @film.reviews.length > 0
+      - @film.reviews.each do |review|
+        =render partial: 'reviews/show', locals: {review: review}
+    -else
+      %p There are no reviews for this film yet
   .film-comment
     %h3 Comments
-    - @film.comments.each do |comment|
-      =render partial: 'comments/show', locals: {comment: comment}
+    -if @film.comments.length > 0
+      - @film.comments.each do |comment|
+        =render partial: 'comments/show', locals: {comment: comment}
+    -else
+      %p There are no comments on this film yet
 
 
 

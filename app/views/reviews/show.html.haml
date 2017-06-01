@@ -24,5 +24,8 @@
   %h2 Comments:
   .new-comment-link=link_to("New Comment!", "/reviews/#{@review.id}/comments/new", remote: true)
 
-  - @review.comments.each do |comment|
-    = render partial: 'comments/review_show', locals: {comment: comment}
+  -if @review.comments.length > 0
+    - @review.comments.each do |comment|
+      = render partial: 'comments/review_show', locals: {comment: comment}
+  -else
+    %p There are no comments on this review yet
