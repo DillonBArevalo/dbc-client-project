@@ -1,7 +1,7 @@
 # Project Rated
 Project Rated is an online database of information related to movies, including actors, reviews, ratings, comments, and trailers.
 
-Live database at: [Heroku](dbc-client-rated.herokuapp.com)
+Live database at: [Heroku](http://dbc-client-rated.herokuapp.com)
 
 
 ### Supported Versions
