@@ -16,4 +16,4 @@
     -@actor.reviews.each do |review|
       =render partial: 'reviews/show', locals: {review:review}
   -else
-    %p There are no reviews for this actor yet
+    %p.no-reviews There are no reviews for this actor yet

@@ -9,3 +9,4 @@
     =comment.reviewed_at
     -if comment.user == current_user
       =link_to("Delete", "/films/#{@film.id}/comments/#{comment.id}", method: 'DELETE', remote: true)
+  %hr{width: "50%"}

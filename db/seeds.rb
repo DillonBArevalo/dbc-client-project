@@ -77,7 +77,7 @@ end
 all_reviews = Review.all
 
 review_comment_bodies = ["I totally agree!", "No! You're wrong!", "I'm not sure if I agree or not...", "Valid point!", "Dude, did you even watch the movie?", "This review seems like it was picked off an array and isn't specific to this movie/actor!"]
-film_comment_bodies = ["My brother worked on this movie!", "This movie changed my life!", "I've never seen this one, is it good?", "Are you kidding me? Why is this movie on the website? I thought it was carefully curated!"]
+film_comment_bodies = ["My sister worked on this movie!", "This movie changed my life!", "I've never seen this one, is it good?", "Are you kidding me? Why is this movie on the website? I thought it was carefully curated!"]
 
 all_films.each do |film|
   all_users.each do |user|

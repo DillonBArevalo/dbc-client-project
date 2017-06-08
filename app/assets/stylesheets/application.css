@@ -139,7 +139,13 @@ body {
 }: hidden;
 }
 
+.actor-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
 iframe {
   display:block;
   margin:auto;
 }
+
