@@ -1,46 +1,57 @@
-.film-full-info
+.flexible-container
+  -if @film.video_url
+    %h3{align: "center"} Trailer for your viewing pleasure
+    %iframe{allowfullscreen: "allowfullscreen", width: 560, height: 315, style: "border:5px solid teal;", :src => @film.video_url}
+
+%br/
+%hr/
+%br/
+
+.film-full-info{align: "center"}
   .film-info
-    .film-image=image_tag(film_image_url(@film.title))
     %h1.title= @film.title
+    .film-image=image_tag(film_image_url(@film.title))
+
+  %hr{:size => "500", :width => "1"}/
 
   .film-details
     %label Rating:
     .average-rating= @film.rating_avg
+    stars
     -if !@film.raters.include?(current_user)
       =render partial: 'ratings/new_film_rating'
 
-    .new-comment-link= link_to "Add comment", film_comments_new_path(@film), remote: true
-    -# lets put this (the above) next to the actual comments.
-    - if current_user.trusted
-      .new-review-link= link_to "Add review", film_reviews_new_path(@film), remote: true
-
     %h3 Actors
+
     -if @film.actors.length > 0
-      %ul
+      %ul.actor-list
         - @film.actors.each do |actor|
           %li= link_to(actor.full_name, actor_path(actor))
     -else
-      %p We do not have any actors listed for this film
+      %p.no-actors We do not have any actors listed for this film
 
--if @film.video_url
-  %h3 Trailer for your viewing pleasure
-  %iframe{allowfullscreen: "allowfullscreen", width: 560, height: 315, :src => @film.video_url}
 
-.film-review-comment
+%hr/
+
+
+.film-review-comment{align: "center"}
   .film-review
     %h3 Reviews
     -if @film.reviews.length > 0
       - @film.reviews.each do |review|
         =render partial: 'reviews/show', locals: {review: review}
     -else
-      %p There are no reviews for this film yet
+      %p.no-reviews There are no reviews for this film yet
+    - if current_user.trusted
+      .new-review-link= link_to "Add review", film_reviews_new_path(@film), remote: true
   .film-comment
     %h3 Comments
     -if @film.comments.length > 0
       - @film.comments.each do |comment|
         =render partial: 'comments/show', locals: {comment: comment}
     -else
-      %p There are no comments on this film yet
+      %p.no-comments There are no comments on this film yet
+    .new-comment-link= link_to "Add comment", film_comments_new_path(@film), remote: true
 
 
 
