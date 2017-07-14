@@ -13,36 +13,45 @@
     .film-image=image_tag(film_image_url(@film.title))
 
   %hr{:size => "500", :width => "1"}/
-    
+
   .film-details
-    Average rating
+    %label Rating:
     .average-rating= @film.rating_avg
     stars
     -if !@film.raters.include?(current_user)
       =render partial: 'ratings/new_film_rating'
 
-    .new-comment-link= link_to "Add comment", film_comments_new_path(@film), remote: true
-    - if current_user.trusted
-      .new-review-link= link_to "Add review", film_reviews_new_path(@film), remote: true
-
     %h3 Actors
-    %ul
-      - @film.actors.each do |actor|
-        %li= link_to(actor.full_name, actor_path(actor))
+
+    -if @film.actors.length > 0
+      %ul.actor-list
+        - @film.actors.each do |actor|
+          %li= link_to(actor.full_name, actor_path(actor))
+    -else
+      %p.no-actors We do not have any actors listed for this film
+
+
 %hr/
+
 
 .film-review-comment{align: "center"}
   .film-review
     %h3 Reviews
-    - @film.reviews.each do |review|
-      =render partial: 'reviews/show', locals: {review: review}
-      %hr{width: "50%"}
-  %hr{:size => "500", :width => "1"}/
+    -if @film.reviews.length > 0
+      - @film.reviews.each do |review|
+        =render partial: 'reviews/show', locals: {review: review}
+    -else
+      %p.no-reviews There are no reviews for this film yet
+    - if current_user.trusted
+      .new-review-link= link_to "Add review", film_reviews_new_path(@film), remote: true
   .film-comment
     %h3 Comments
-    - @film.comments.each do |comment|
-      =render partial: 'comments/show', locals: {comment: comment}
-      %hr{width: "50%"}
+    -if @film.comments.length > 0
+      - @film.comments.each do |comment|
+        =render partial: 'comments/show', locals: {comment: comment}
+    -else
+      %p.no-comments There are no comments on this film yet
+    .new-comment-link= link_to "Add comment", film_comments_new_path(@film), remote: true
 
 
 

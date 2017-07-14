@@ -37,7 +37,6 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'kaminari'
 gem 'ransack', github: 'activerecord-hackery/ransack'
-gem 'themoviedb-api'
 gem 'dotenv-rails', groups: [:development, :test]
 
 

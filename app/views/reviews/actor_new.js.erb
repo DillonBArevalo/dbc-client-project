@@ -1,4 +1,6 @@
 var reviewDiv = $('.new-review-link')
 if(reviewDiv.children().length === 1){
   reviewDiv.append('<%= j render partial: "actor_form" %>')
+}else{
+  reviewDiv.find('.review-form').remove();
 }

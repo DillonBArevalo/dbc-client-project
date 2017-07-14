@@ -1,2 +1,3 @@
-$('.film-comment').append('<%= j render partial: "show", locals: {comment: @comment} %>');
+$('.film-comment').find('.new-comment-link').before('<%= j render partial: "show", locals: {comment: @comment} %>');
 $('.comment-form').remove();
+$('.no-comments').remove();

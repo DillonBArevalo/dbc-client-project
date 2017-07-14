@@ -4,8 +4,10 @@
       -if @display
         -if review.reviewable_type == "Actor"
           =link_to(review.reviewable.full_name, actor_path(review.reviewable))
+          =link_to("View review", review_path(review))
         -else
           =link_to(review.reviewable.title, film_path(review.reviewable))
+          =link_to("View review", review_path(review))
       -else
         =link_to("View full review", review_path(review))
   %p
@@ -16,3 +18,4 @@
       =review.user.full_name
     %label reviewed on:
     =review.reviewed_at
+  %hr{width: "50%"}

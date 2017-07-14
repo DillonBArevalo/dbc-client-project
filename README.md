@@ -38,3 +38,12 @@ Go to localhost:3000 on your browser to access the web application.
 * **Joseph Huang**
 * **Namuun Bayaraa**
 * **Govind Rai**
+
+
+Example account for anyone wanting to try the thing out:
+ first name: example
+ last name: account
+ email: example@account.com
+ password: password
+
+ Trusted Rater: true

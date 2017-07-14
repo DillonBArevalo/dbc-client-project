@@ -81,9 +81,10 @@ class ReviewsController < ApplicationController
   def destroy
     authenticate
     @review = Review.find(params[:id])
+    reviewed = @review.reviewable
     check_user
     @review.destroy
-    redirect_to '/'
+    redirect_to reviewed
   end
 
   private

@@ -11,6 +11,11 @@
 -if current_user.trusted
   .new-review-link=link_to("Review this actor", actor_reviews_new_path(@actor), remote: true)
 
+%hr{width: "50%"}
+
 .actor-review
-  -@actor.reviews.each do |review|
-    =render partial: 'reviews/show', locals: {review:review}
+  -if @actor.reviews.length > 0
+    -@actor.reviews.each do |review|
+      =render partial: 'reviews/show', locals: {review:review}
+  -else
+    %p.no-reviews There are no reviews for this actor yet

@@ -1,2 +1,3 @@
-$('.film-review').append('<%= j render partial: "show", locals: {review: @my_review} %>');
+$('.film-review').find('.new-review-link').before('<%= j render partial: "show", locals: {review: @my_review} %>');
 $('.review-form').remove();
+$('.no-reviews').remove();
