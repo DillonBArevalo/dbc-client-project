@@ -1,6 +1,7 @@
 -if @review.reviewable_type == "Film"
   %h1
     Review for #{@review.reviewable.title}
+  .film-image=image_tag(film_image_url(@review.reviewable.title))
   =link_to("view page", film_path(@review.reviewable))
 -else
   %h1

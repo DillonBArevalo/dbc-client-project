@@ -66,7 +66,7 @@ all_films = Film.all
 all_users = User.all
 all_actors = Actor.all
 
-actor_review_bodies = ["I know them!", "Favorite actor of all time. Seriously.", "Such a one note actor; I can't stand them!", "I've literally never seen a performance from them that I've liked.", "I watch movies just because his actor is in them. Can't recommend them more!"]
+actor_review_bodies = ["I know them!", "Favorite actor of all time. Seriously.", "Such a one note actor; I can't stand them!", "I've literally never seen a performance from them that I've liked.", "I watch movies just because this actor is in them. Can't recommend them more!"]
 
 all_actors.each do |actor|
   2.times do
